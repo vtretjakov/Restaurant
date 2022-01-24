@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		C41B8FF0279D09C400089D38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41B8FEF279D09C400089D38 /* AppDelegate.swift */; };
 		C41B8FF2279D09C400089D38 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41B8FF1279D09C400089D38 /* SceneDelegate.swift */; };
-		C41B8FF4279D09C400089D38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41B8FF3279D09C400089D38 /* ViewController.swift */; };
 		C41B8FF7279D09C400089D38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C41B8FF5279D09C400089D38 /* Main.storyboard */; };
 		C41B8FF9279D09C700089D38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C41B8FF8279D09C700089D38 /* Assets.xcassets */; };
 		C41B8FFC279D09C700089D38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C41B8FFA279D09C700089D38 /* LaunchScreen.storyboard */; };
+		C41B9009279EA14600089D38 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41B9008279EA14600089D38 /* Categories.swift */; };
+		C41B900C279EA27600089D38 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41B900B279EA27600089D38 /* NetworkManager.swift */; };
+		C41B900E279EBD1A00089D38 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41B900D279EBD1A00089D38 /* MenuTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C41B8FEC279D09C400089D38 /* Restaurant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Restaurant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C41B8FEF279D09C400089D38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C41B8FF1279D09C400089D38 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C41B8FF3279D09C400089D38 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C41B8FF6279D09C400089D38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C41B8FF8279D09C700089D38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C41B8FFB279D09C700089D38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C41B8FFD279D09C700089D38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C41B9008279EA14600089D38 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		C41B900B279EA27600089D38 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		C41B900D279EBD1A00089D38 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,65 @@
 		C41B8FEE279D09C400089D38 /* Restaurant */ = {
 			isa = PBXGroup;
 			children = (
-				C41B8FEF279D09C400089D38 /* AppDelegate.swift */,
-				C41B8FF1279D09C400089D38 /* SceneDelegate.swift */,
-				C41B8FF3279D09C400089D38 /* ViewController.swift */,
-				C41B8FF5279D09C400089D38 /* Main.storyboard */,
-				C41B8FF8279D09C700089D38 /* Assets.xcassets */,
-				C41B8FFA279D09C700089D38 /* LaunchScreen.storyboard */,
-				C41B8FFD279D09C700089D38 /* Info.plist */,
+				C41B9003279D0A4700089D38 /* App */,
+				C41B9004279D0AB400089D38 /* Controllers */,
+				C41B900A279EA21A00089D38 /* Manager */,
+				C41B9007279EA10E00089D38 /* Models */,
+				C41B9006279D0B2100089D38 /* Resources */,
+				C41B9005279D0B0C00089D38 /* Storyboards */,
 			);
 			path = Restaurant;
+			sourceTree = "<group>";
+		};
+		C41B9003279D0A4700089D38 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C41B8FEF279D09C400089D38 /* AppDelegate.swift */,
+				C41B8FFD279D09C700089D38 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		C41B9004279D0AB400089D38 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C41B8FF1279D09C400089D38 /* SceneDelegate.swift */,
+				C41B900D279EBD1A00089D38 /* MenuTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C41B9005279D0B0C00089D38 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C41B8FF5279D09C400089D38 /* Main.storyboard */,
+				C41B8FFA279D09C700089D38 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		C41B9006279D0B2100089D38 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C41B8FF8279D09C700089D38 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C41B9007279EA10E00089D38 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C41B9008279EA14600089D38 /* Categories.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C41B900A279EA21A00089D38 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				C41B900B279EA27600089D38 /* NetworkManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +192,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C41B8FF4279D09C400089D38 /* ViewController.swift in Sources */,
+				C41B900C279EA27600089D38 /* NetworkManager.swift in Sources */,
+				C41B9009279EA14600089D38 /* Categories.swift in Sources */,
+				C41B900E279EBD1A00089D38 /* MenuTableViewController.swift in Sources */,
 				C41B8FF0279D09C400089D38 /* AppDelegate.swift in Sources */,
 				C41B8FF2279D09C400089D38 /* SceneDelegate.swift in Sources */,
 			);
@@ -291,7 +347,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9V3TAVF7A9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Restaurant/Info.plist;
+				INFOPLIST_FILE = Restaurant/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -319,7 +375,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9V3TAVF7A9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Restaurant/Info.plist;
+				INFOPLIST_FILE = Restaurant/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
