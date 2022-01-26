@@ -5,7 +5,7 @@
 //  Created by Владимир on 24.01.2022.
 //
 
-import Foundation
+import UIKit
 
 class NetworkManager {
     
@@ -57,4 +57,9 @@ class NetworkManager {
         }
         task.resume()
     }
+    
+    func getImage(_ initialURL: URL, completion: @escaping (UIImage?, Error?) -> Void) {
+        
+    }
+    
 }

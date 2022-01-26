@@ -11,6 +11,7 @@ class ItemTableViewController: UITableViewController {
 
 // MARK: - Properties
     
+    let cellManager = CellManager()
     let networkManager = NetworkManager()
     var category: String!
     var menuItems = [MenuItem]()
@@ -46,9 +47,8 @@ class ItemTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
-        
-        
-        // TODO: configure cell
+        let menuItem = menuItems[indexPath.row]
+        cellManager.configure(cell, with: menuItem)
         
         return cell
     }
