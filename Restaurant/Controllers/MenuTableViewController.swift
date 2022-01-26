@@ -15,7 +15,7 @@ class MenuTableViewController: UITableViewController {
     let networkManager = NetworkManager()
     var categories = [String]()
     
-    // MARK: - Methods
+    // MARK: - UIViewController Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +37,16 @@ class MenuTableViewController: UITableViewController {
             }
         }
     }
+    
+    // MARK: - Navigation Methods
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "ItemSegue" else {return}
+        guard let categoryIndex = tableView.indexPathForSelectedRow else {return}
+        let destination = segue.destination as! ItemTableViewController
+        destination.category = categories[categoryIndex.row] // проверяем какая ячейка выбрана и соответственно номер этой ячейки - будет индексом нашего массива
+    }
+    
     
     // MARK: - UITableViewDataSource
     

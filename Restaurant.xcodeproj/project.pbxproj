@@ -19,6 +19,7 @@
 		C41B901227A0223700089D38 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41B901127A0223700089D38 /* MenuItem.swift */; };
 		C41B901427A0226B00089D38 /* MenuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41B901327A0226B00089D38 /* MenuItems.swift */; };
 		C41B901827A0325C00089D38 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41B901727A0325C00089D38 /* URL+Extension.swift */; };
+		C41B901A27A1428F00089D38 /* ItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41B901927A1428F00089D38 /* ItemTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		C41B901127A0223700089D38 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		C41B901327A0226B00089D38 /* MenuItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItems.swift; sourceTree = "<group>"; };
 		C41B901727A0325C00089D38 /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
+		C41B901927A1428F00089D38 /* ItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			children = (
 				C41B8FF1279D09C400089D38 /* SceneDelegate.swift */,
 				C41B900D279EBD1A00089D38 /* MenuTableViewController.swift */,
+				C41B901927A1428F00089D38 /* ItemTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C41B901A27A1428F00089D38 /* ItemTableViewController.swift in Sources */,
 				C41B901227A0223700089D38 /* MenuItem.swift in Sources */,
 				C41B901427A0226B00089D38 /* MenuItems.swift in Sources */,
 				C41B900C279EA27600089D38 /* NetworkManager.swift in Sources */,
