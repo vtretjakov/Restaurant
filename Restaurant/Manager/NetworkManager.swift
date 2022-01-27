@@ -59,7 +59,22 @@ class NetworkManager {
     }
     
     func getImage(_ initialURL: URL, completion: @escaping (UIImage?, Error?) -> Void) {
-        
-    }
+        var components = URLComponents(url: initialURL, resolvingAgainstBaseURL: true)
+        components?.host = baseURL.host
+        guard let url = components?.url else {
+            completion(nil, nil)
+            return
+        }
+        let task = URLSession.shared.dataTask(with: url){
+            data, _, error in
+            guard let data = data else {
+                completion(nil, error)
+                return
+            }
+            let image = UIImage(data: data)
+            completion(image, nil) //если с датой все норм
+        }
+        task.resume()
+    } // getImage - получает url, меняет адрес хоста на настоящий, выполняет запрос и выкачивает кэш
     
 }

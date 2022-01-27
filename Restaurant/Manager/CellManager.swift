@@ -12,13 +12,26 @@ class CellManager {
         cell.textLabel?.text = category.localizedCapitalized
     }
     
-    func configure(_ cell: UITableViewCell, with menuItem: MenuItem) {
+    func configure(
+        _ cell: UITableViewCell,
+        with menuItem: MenuItem,
+        for tableView: UITableView,
+        indexPath: IndexPath
+    ) {
         cell.textLabel?.text = menuItem.name
         cell.detailTextLabel?.text = String(format: "$%.2f", menuItem.price)
         
-        // TODO: load picture
+        guard cell.imageView?.image == nil else {return}
         
-        
+        NetworkManager().getImage(menuItem.imageURL) /* networkmanager.getImage - error */ {
+            image, error in
+            if let error = error {
+                print(#line, #function, "ERROR", error.localizedDescription)
+            }
+            DispatchQueue.main.async {
+                cell.imageView?.image = image
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
+        }
     }
-    
 } // locaCapit. - Представление строки с заглавной буквы, созданное с использованием текущего языка + add to properties.
