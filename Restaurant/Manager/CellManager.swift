@@ -21,17 +21,21 @@ class CellManager {
         cell.textLabel?.text = menuItem.name
         cell.detailTextLabel?.text = String(format: "$%.2f", menuItem.price)
         
-        guard cell.imageView?.image == nil else {return}
-        
+        if let image = menuItem.image {
+                cell.imageView?.image = image
+        } else {
         NetworkManager().getImage(menuItem.imageURL) /* networkmanager.getImage - error */ {
             image, error in
             if let error = error {
                 print(#line, #function, "ERROR", error.localizedDescription)
             }
+            if let image = image {
+            menuItem.image = image
             DispatchQueue.main.async {
-                cell.imageView?.image = image
-                tableView.reloadRows(at: [indexPath], with: .automatic)
-            }
+               tableView.reloadRows(at: [indexPath], with: .automatic)
+             }
+          }
         }
-    }
+     }
+   }
 } // locaCapit. - Представление строки с заглавной буквы, созданное с использованием текущего языка + add to properties.
