@@ -41,7 +41,7 @@ class CategoryTableViewController: UITableViewController {
     // MARK: - Navigation Methods
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "ItemSegue" else {return}
+        guard segue.identifier == "MenuSegue" else {return}
         guard let categoryIndex = tableView.indexPathForSelectedRow else {return}
         let destination = segue.destination as! MenuTableViewController
         destination.category = categories[categoryIndex.row] // проверяем какая ячейка выбрана и соответственно номер этой ячейки - будет индексом нашего массива

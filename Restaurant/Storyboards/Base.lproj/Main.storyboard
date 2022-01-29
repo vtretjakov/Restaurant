@@ -101,7 +101,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Ml9-PD-G4c" kind="show" identifier="ItemSegue" id="S7Z-SF-Wdh"/>
+                                    <segue destination="Ml9-PD-G4c" kind="show" identifier="MenuSegue" id="S7Z-SF-Wdh"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -149,7 +149,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Y4y-Af-KNq" kind="show" id="rJS-ja-zXe"/>
+                                    <segue destination="Y4y-Af-KNq" kind="show" identifier="ItemSegue" id="rJS-ja-zXe"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -159,7 +159,7 @@
                             <outlet property="delegate" destination="Ml9-PD-G4c" id="wgV-ea-SXG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="KV1-Hb-SRO" userLabel="Category"/>
+                    <navigationItem key="navigationItem" title="Title" id="KV1-Hb-SRO" userLabel="Category Menu"/>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Vk-b9-DiP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -206,6 +206,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="Add to Order">
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="orderButtonTapped:" destination="Y4y-Af-KNq" eventType="touchUpInside" id="ALF-ew-RBr"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <variation key="heightClass=regular-widthClass=compact" axis="vertical"/>
@@ -225,6 +228,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Title" largeTitleDisplayMode="never" id="6Nq-49-X6n"/>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="addToOrderButton" destination="OYZ-xc-gDz" id="M3u-2y-h5G"/>
+                        <outlet property="detailTextLabel" destination="QxZ-gI-brw" id="n9n-xn-lcn"/>
+                        <outlet property="imageView" destination="vf5-mI-cvr" id="bLc-IL-shL"/>
+                        <outlet property="priceLabel" destination="4Lz-N5-EJg" id="mtz-tj-RhI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="31r-ST-xsk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

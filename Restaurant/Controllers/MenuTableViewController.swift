@@ -40,6 +40,16 @@ class MenuTableViewController: UITableViewController {
             }
         }
     }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "ItemSegue" else {return}
+        guard let indexPath = tableView.indexPathForSelectedRow else {return}
+        let destination = segue.destination as! ItemViewController // если ItemSegue == ItemSegue
+        destination.menuItem = menuItems[indexPath.row]
+    }
+    
     // MARK: - UITableViewControllerDelegate
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
