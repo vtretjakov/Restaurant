@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C407CF3F27A631D800DBCF6C /* OrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C407CF3E27A631D800DBCF6C /* OrderTableViewController.swift */; };
+		C407CF4127A6328A00DBCF6C /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = C407CF4027A6328A00DBCF6C /* Order.swift */; };
+		C407CF4327A6387200DBCF6C /* OrderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C407CF4227A6387200DBCF6C /* OrderManager.swift */; };
 		C41B8FF0279D09C400089D38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41B8FEF279D09C400089D38 /* AppDelegate.swift */; };
 		C41B8FF2279D09C400089D38 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41B8FF1279D09C400089D38 /* SceneDelegate.swift */; };
 		C41B8FF7279D09C400089D38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C41B8FF5279D09C400089D38 /* Main.storyboard */; };
@@ -24,6 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C407CF3E27A631D800DBCF6C /* OrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewController.swift; sourceTree = "<group>"; };
+		C407CF4027A6328A00DBCF6C /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		C407CF4227A6387200DBCF6C /* OrderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderManager.swift; sourceTree = "<group>"; };
 		C41B8FEC279D09C400089D38 /* Restaurant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Restaurant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C41B8FEF279D09C400089D38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C41B8FF1279D09C400089D38 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +104,7 @@
 				C41B900D279EBD1A00089D38 /* CategoryTableViewController.swift */,
 				C44C22C927A59123004255FF /* ItemViewController.swift */,
 				C41B901927A1428F00089D38 /* MenuTableViewController.swift */,
+				C407CF3E27A631D800DBCF6C /* OrderTableViewController.swift */,
 				C41B8FF1279D09C400089D38 /* SceneDelegate.swift */,
 			);
 			path = Controllers;
@@ -126,6 +133,7 @@
 				C41B9008279EA14600089D38 /* Categories.swift */,
 				C41B901127A0223700089D38 /* MenuItem.swift */,
 				C41B901327A0226B00089D38 /* MenuItems.swift */,
+				C407CF4027A6328A00DBCF6C /* Order.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -135,6 +143,7 @@
 			children = (
 				C41B900F27A01ECB00089D38 /* CellManager.swift */,
 				C41B900B279EA27600089D38 /* NetworkManager.swift */,
+				C407CF4227A6387200DBCF6C /* OrderManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -222,11 +231,14 @@
 				C41B901A27A1428F00089D38 /* MenuTableViewController.swift in Sources */,
 				C41B901227A0223700089D38 /* MenuItem.swift in Sources */,
 				C41B901427A0226B00089D38 /* MenuItems.swift in Sources */,
+				C407CF4327A6387200DBCF6C /* OrderManager.swift in Sources */,
+				C407CF3F27A631D800DBCF6C /* OrderTableViewController.swift in Sources */,
 				C41B900C279EA27600089D38 /* NetworkManager.swift in Sources */,
 				C41B901027A01ECB00089D38 /* CellManager.swift in Sources */,
 				C41B9009279EA14600089D38 /* Categories.swift in Sources */,
 				C41B901827A0325C00089D38 /* URL+Extension.swift in Sources */,
 				C41B900E279EBD1A00089D38 /* CategoryTableViewController.swift in Sources */,
+				C407CF4127A6328A00DBCF6C /* Order.swift in Sources */,
 				C41B8FF0279D09C400089D38 /* AppDelegate.swift in Sources */,
 				C41B8FF2279D09C400089D38 /* SceneDelegate.swift in Sources */,
 			);

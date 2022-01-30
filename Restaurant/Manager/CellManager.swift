@@ -19,7 +19,7 @@ class CellManager {
         indexPath: IndexPath
     ) {
         cell.textLabel?.text = menuItem.name
-        cell.detailTextLabel?.text = String(format: "$%.2f", menuItem.price)
+        cell.detailTextLabel?.text = menuItem.formattedPrice
         
         if let image = menuItem.image {
                 cell.imageView?.image = image
@@ -38,4 +38,4 @@ class CellManager {
         }
      }
    }
-} // locaCapit. - Представление строки с заглавной буквы, созданное с использованием текущего языка + add to properties.
+} // конфигуратор ячейки menuItem, locaCapit. - Представление строки с заглавной буквы, созданное с использованием текущего языка + add to properties.

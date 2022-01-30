@@ -46,3 +46,9 @@ class MenuItem: Codable {
         case imageURL = "image_url"
     }
 }
+
+extension MenuItem {
+    var formattedPrice: String {
+        return String(format: "$%.2f", price)
+    }
+} // т.е у нашей модели есть прайс, который Double, а есть форматедПрайс который отформатирован так как нам нужно и тогда везде где нам нужен не Дабл а строка, то вместо того чтобы в ручную преобразовывать мы будем вручную ставить форматедПрайс
