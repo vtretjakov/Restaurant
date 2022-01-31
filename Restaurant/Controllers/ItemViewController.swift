@@ -43,8 +43,9 @@ class ItemViewController: UIViewController {
         
         UIView.animate(withDuration: 0.3) {
             self.addToOrderButton.transform = CGAffineTransform(scaleX: 3, y: 3) // увеличение
-            self.addToOrderButton.transform = CGAffineTransform.identity // уменьшение 
+            self.addToOrderButton.transform = CGAffineTransform.identity // уменьшение
         }
+        OrderManager.shared.order.menuItems.append(menuItem)
         
     }
 }
