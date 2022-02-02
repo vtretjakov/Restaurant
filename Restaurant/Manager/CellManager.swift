@@ -19,7 +19,7 @@ class CellManager {
         indexPath: IndexPath
     ) {
         cell.textLabel?.text = menuItem.name
-        cell.detailTextLabel?.text = menuItem.formattedPrice
+        cell.detailTextLabel?.text = menuItem.price.formattedHundreds
         
         if let image = menuItem.image {
                 cell.imageView?.image = image

@@ -65,29 +65,64 @@
                             <outlet property="delegate" destination="1BB-ds-Wdy" id="qTb-DS-htp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Order" id="V1e-31-4j7"/>
+                    <navigationItem key="navigationItem" title="Order" id="V1e-31-4j7">
+                        <barButtonItem key="rightBarButtonItem" title="Submit" style="done" id="cmo-n2-iMJ">
+                            <connections>
+                                <action selector="submitTapped:" destination="1BB-ds-Wdy" id="Lgr-3x-HSi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <segue destination="Yuz-rF-zX7" kind="show" id="4X0-NO-9Qn"/>
+                        <segue destination="Yuz-rF-zX7" kind="show" identifier="OrderConfirmationSegue" id="4X0-NO-9Qn"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O8i-eA-jpX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1486.9565217391305" y="540.40178571428567"/>
         </scene>
-        <!--View Controller-->
+        <!--Order Confirmation View Controller-->
         <scene sceneID="6kZ-MC-8L3">
             <objects>
-                <viewController id="Yuz-rF-zX7" sceneMemberID="viewController">
+                <viewController id="Yuz-rF-zX7" customClass="OrderConfirmationViewController" customModule="Restaurant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mPE-7J-EAN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0Js-yv-Aar">
+                                <rect key="frame" x="170" y="416.5" width="74.5" height="63.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NyV-Nc-ZTf">
+                                        <rect key="frame" x="0.0" y="0.0" width="74.5" height="32.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u94-Dd-h9f">
+                                        <rect key="frame" x="0.0" y="32.5" width="74.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Dismiss"/>
+                                        <connections>
+                                            <segue destination="5st-Cu-cmw" kind="unwind" unwindAction="unwind:" id="jKI-nL-fil"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="OEo-6p-Sxe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0Js-yv-Aar" firstAttribute="centerX" secondItem="mPE-7J-EAN" secondAttribute="centerX" id="QHy-oM-r4g"/>
+                            <constraint firstItem="0Js-yv-Aar" firstAttribute="centerY" secondItem="mPE-7J-EAN" secondAttribute="centerY" id="Uvc-2X-xFp"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Znk-ZN-rcK"/>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="timeRemainingLabel" destination="NyV-Nc-ZTf" id="iNu-ol-stg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6b0-Fe-mnf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="5st-Cu-cmw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2344.9275362318845" y="539.73214285714278"/>
         </scene>

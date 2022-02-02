@@ -7,7 +7,7 @@
 
 import UIKit
 
-@main
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
@@ -18,20 +18,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         orderTabBarItem.badgeValue = 0 < count ? "\(count)" : nil
     }
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+   // func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
-        let tabBarController = window!.rootViewController as! UITabBarController // инициализатор при первой загрузке (rootVC - первый контроллер)
-        orderTabBarItem = tabBarController.viewControllers![1].tabBarItem // 0 - навигейшн который относится к меню, добавление количества заказов к order
+   //     let tabBarController = window!.rootViewController as! UITabBarController     // инициализатор при первой загрузке (rootVC - первый контроллер)
+   //     orderTabBarItem = tabBarController.viewControllers![1].tabBarItem     // 0 - навигейшн который относится к меню, добавление количества заказов к order
         
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(updateOrderBadge),
-            name: OrderManager.orderUpdatedNotification,
-            object: nil
-        )
-        
-        return true
-    }
-    
+    //    NotificationCenter.default.addObserver(
+    //       self,
+    //        selector: #selector(updateOrderBadge),
+    //        name: OrderManager.orderUpdatedNotification,
+    //        object: nil
+    //    )
+    //    return true
+    // } - не отрабатывает(неожиданный nil)
 }
 

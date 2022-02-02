@@ -11,6 +11,8 @@ class NetworkManager {
     
     let baseURL = URL(string: "http://mda.getoutfit.co:8090")!
     
+    // MARK: - Get Methods
+    
     func getCategories(completion: @escaping ([String]?, Error?) -> Void /* параметр который мы вызываем когда все выполнилось */) /* получить список категорий: */
         {
         let url = baseURL.appendingPathComponent("categories")
@@ -77,4 +79,14 @@ class NetworkManager {
         task.resume()
     } // getImage - получает url, меняет адрес хоста на настоящий, выполняет запрос и выкачивает кэш
     
+    // MARK: - Post Methods
+    
+    func submitOrder(forMenuIDs menuIDs: [Int], completion: @escaping (Int?, Error?) -> Void ) {
+        
+        let url = baseURL.appendingPathComponent("order")
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        
+        
+    } // должна отправить данные на сервер и получить количество меню которые с сервера приходят
 }
