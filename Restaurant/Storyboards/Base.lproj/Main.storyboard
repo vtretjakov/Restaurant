@@ -89,16 +89,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0Js-yv-Aar">
-                                <rect key="frame" x="170" y="416.5" width="74.5" height="63.5"/>
+                                <rect key="frame" x="20" y="416.5" width="374" height="63.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NyV-Nc-ZTf">
-                                        <rect key="frame" x="0.0" y="0.0" width="74.5" height="32.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="32.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u94-Dd-h9f">
-                                        <rect key="frame" x="0.0" y="32.5" width="74.5" height="31"/>
+                                        <rect key="frame" x="0.0" y="32.5" width="374" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Dismiss"/>
                                         <connections>
@@ -111,8 +111,9 @@
                         <viewLayoutGuide key="safeArea" id="OEo-6p-Sxe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="0Js-yv-Aar" firstAttribute="centerX" secondItem="mPE-7J-EAN" secondAttribute="centerX" id="QHy-oM-r4g"/>
+                            <constraint firstItem="0Js-yv-Aar" firstAttribute="leading" secondItem="OEo-6p-Sxe" secondAttribute="leading" constant="20" id="7mi-xA-fTN"/>
                             <constraint firstItem="0Js-yv-Aar" firstAttribute="centerY" secondItem="mPE-7J-EAN" secondAttribute="centerY" id="Uvc-2X-xFp"/>
+                            <constraint firstItem="OEo-6p-Sxe" firstAttribute="trailing" secondItem="0Js-yv-Aar" secondAttribute="trailing" constant="20" id="jqG-ck-PJU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Znk-ZN-rcK"/>

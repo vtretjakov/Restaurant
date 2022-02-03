@@ -86,7 +86,29 @@ class NetworkManager {
         let url = baseURL.appendingPathComponent("order")
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        
-        
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let data = ["menuIds": menuIDs]
+        let encoder = JSONEncoder()
+        let jsonData = try? encoder.encode(data)
+        request.httpBody = jsonData
+        let task = URLSession.shared.dataTask(with: request) { data, _, error in
+            guard error == nil else {
+                completion(nil, error)
+                return
+            }
+            guard let data = data else {
+                print(#line, #function, "ERROR: Data is nil")
+                completion(nil, nil)
+                return
+            }
+            let decoder = JSONDecoder()
+            guard let preparationTime = try? decoder.decode(PreparationTime.self, from: data) else {
+                print(#line, #function, "ERROR: Can't convert \(data) to preparationTime")
+                completion(nil, nil)
+                return
+            }
+            completion(preparationTime.prepTime, nil)
+        }
+        task.resume()
     } // должна отправить данные на сервер и получить количество меню которые с сервера приходят
 }
