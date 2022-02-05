@@ -23,6 +23,7 @@ class OrderTableViewController: UITableViewController {
             selector: #selector(UITableView.reloadData),
             name: OrderManager.orderUpdatedNotification,
             object: nil) // всегда когда приходит уведомление будет обновляться таблица
+        navigationItem.leftBarButtonItem = editButtonItem
     }
     
     // MARK: - Stored Properties
@@ -32,6 +33,7 @@ class OrderTableViewController: UITableViewController {
     // MARK: - Navigation
     
     // нужно получить кол-во минут с сервера и передать в OrderConfirmationViewController:
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "OrderConfirmationSegue" else {return}
         let destination = segue.destination as! OrderConfirmationViewController
@@ -55,6 +57,30 @@ class OrderTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let movedOrder = OrderManager.shared.order.menuItems.remove(at: sourceIndexPath.row)
+        OrderManager.shared.order.menuItems.insert(movedOrder, at: destinationIndexPath.row)
+        tableView.reloadData()
+    } // перемещение при редактировании
+    
+        override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+            return .delete
+        } // удаление при редактировании значок
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        switch editingStyle {
+        case.delete:
+            OrderManager.shared.order.menuItems.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        case.insert:
+            break
+        case.none:
+            break
+        @unknown default:
+            break
+        }
+    } // реализация удаления
+    
     // MARK: - Custom Methods
     
     func uploadOrder() // фу-я должна: составить список идентификаторов которые нужно отправить на сервер menuUds;
@@ -75,6 +101,7 @@ class OrderTableViewController: UITableViewController {
                 self.performSegue(
                     withIdentifier: "OrderConfirmationSegue",
                     sender: nil)
+                    
           }
         }
       }
@@ -108,6 +135,7 @@ class OrderTableViewController: UITableViewController {
                 )
         
     }
+    
 }
 
 
