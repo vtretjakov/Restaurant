@@ -38,5 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //   )
      //   return true
     // } // - не отрабатывает(неожиданный nil)
+    
 }
 

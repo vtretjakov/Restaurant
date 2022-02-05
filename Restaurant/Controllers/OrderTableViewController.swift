@@ -77,6 +77,7 @@ class OrderTableViewController: UITableViewController {
         case.none:
             break
         @unknown default:
+            print(#line, #function, "Unknown case in file \(#file)")
             break
         }
     } // реализация удаления
